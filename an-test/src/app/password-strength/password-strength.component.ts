@@ -21,21 +21,21 @@ export class PasswordStrengthComponent {
       this.section1Color = this.section2Color = this.section3Color = 'gray';
     } else if (passwordLength < 8) {
       this.section1Color = this.section2Color = this.section3Color = 'red';
-    } else if (hasLetters && (hasDigits || hasSymbols)) {
+    }
+    else if (hasLetters && hasDigits && hasSymbols) {
       this.section1Color = 'green';
       this.section2Color = 'green';
       this.section3Color = 'green';
-    } else if (hasLetters && hasDigits && hasSymbols) {
-      this.section1Color = this.section2Color = this.section3Color = 'green';
-    } else if (hasLetters && hasDigits) {
-      this.section1Color = this.section2Color = 'yellow';
-      this.section3Color = 'gray';
-    } else if ((hasLetters && hasSymbols) || (hasDigits && hasSymbols)) {
-      this.section1Color = 'yellow';
+    }
+    else if (hasLetters && !hasDigits && !hasSymbols) {
+      this.section1Color = 'red';
       this.section2Color = 'gray';
       this.section3Color = 'gray';
-    } else {
-      this.section1Color = this.section2Color = this.section3Color = 'red';
+
+    } else if (hasLetters && (hasDigits || hasSymbols)) {
+      this.section1Color = 'yellow';
+      this.section2Color = 'yellow';
+      this.section3Color = 'gray';
     }
   }
 }
