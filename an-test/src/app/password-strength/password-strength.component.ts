@@ -19,15 +19,16 @@ export class PasswordStrengthComponent {
 
     if (passwordLength === 0) {
       this.section1Color = this.section2Color = this.section3Color = 'gray';
+
     } else if (passwordLength < 8) {
       this.section1Color = this.section2Color = this.section3Color = 'red';
-    }
-    else if (hasLetters && hasDigits && hasSymbols) {
+
+    } else if (hasLetters && hasDigits && hasSymbols) {
       this.section1Color = 'green';
       this.section2Color = 'green';
       this.section3Color = 'green';
-    }
-    else if (hasLetters && !hasDigits && !hasSymbols) {
+
+    } else if (hasLetters && !hasDigits && !hasSymbols) {
       this.section1Color = 'red';
       this.section2Color = 'gray';
       this.section3Color = 'gray';
